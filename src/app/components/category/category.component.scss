@@ -1,0 +1,36 @@
+main{
+    display: flex;
+    flex-direction: column;
+    padding: 1.125rem;
+    margin-top: 0;
+    gap: 4rem;
+
+    header{
+        display: flex;
+        align-items: center;
+        gap: 5rem;
+        
+        border: 2px solid #44d;
+
+        .category-header{
+            font-family: inherit;
+            font-size: 48px;
+            font-weight: 400;
+            letter-spacing: -0.5%; 
+            -webkit-text-stroke-width: 2px;
+            -webkit-text-stroke-color: black;
+            background: linear-gradient(to bottom, #67B6FF, #fff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+    }
+
+    #category-list {
+        display: grid;
+        margin: auto;
+        gap: 0.5rem;
+        border: 2px solid #e49;
+    }
+}
+
