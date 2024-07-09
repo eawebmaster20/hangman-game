@@ -1,1 +1,182 @@
-/* You can add global styles to this file, and also import other style files */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --dark-navy: #261676;
+  --blue: #2463ff;
+  --white: #ffffff;
+  --blue-hover: #5b8aff;
+}
+
+body,
+button {
+  font-family: "Mouse Memoirs", sans-serif;
+}
+
+body {
+  background-image: url("./assets/images/background-mobile.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+  color: var(--white);
+}
+
+/* Button One Styles */
+.button-one {
+  font-size: 32px;
+  padding: 12px 64px;
+  background-color: var(--blue);
+  color: var(--white);
+  border-radius: 40px;
+  border: none;
+  appearance: none;
+  box-shadow: inset 0 -2px 0 3px rgba(20, 14, 102, 1),
+    inset 0 1px 0 6px rgba(60, 116, 255, 1);
+  cursor: pointer;
+  transition: 0.2s ease-in;
+}
+
+.button-one:hover {
+  background-color: var(--blue-hover);
+}
+
+/* Button Two Styles */
+.button-two {
+  font-size: 32px;
+  padding: 12px 64px;
+  background: linear-gradient(to bottom, #fe71fe, #7199ff);
+  color: var(--white);
+  border-radius: 40px;
+  border: none;
+  appearance: none;
+  box-shadow: inset 0 -2px 0 3px rgba(20, 14, 102, 1),
+    inset 0 1px 0 6px rgba(198, 66, 251, 1);
+  cursor: pointer;
+  transition: 0.2s ease-in;
+}
+
+.button-two:hover {
+  background: linear-gradient(to bottom, #fe71fe, #b6caff);
+}
+
+.playable-letter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 112px;
+  height: 128px;
+  font-size: 88px;
+  padding: 12px 42px;
+  background-color: var(--blue);
+  color: var(--white);
+  border-radius: 40px;
+  border: none;
+  appearance: none;
+  box-shadow: inset 0 -2px 0 3px rgba(20, 14, 102, 1),
+    inset 0 1px 0 6px rgba(60, 116, 255, 1);
+  cursor: pointer;
+  transition: 0.2s ease-in;
+}
+
+.disabled-playable {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 112px;
+  height: 128px;
+  font-size: 88px;
+  padding: 12px 42px;
+  background-color: var(--dark-navy);
+  color: var(--white);
+  border-radius: 40px;
+  border: none;
+  appearance: none;
+  box-shadow: inset 0 -2px 0 3px rgba(20, 14, 102, 1),
+    inset 0 1px 0 6px rgba(60, 116, 255, 0.2);
+  cursor: pointer;
+}
+
+.regular-letter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 74px;
+  height: 84px;
+  font-size: 48px;
+  color: var(--dark-navy);
+  border-radius: 24px;
+  border: none;
+  cursor: pointer;
+}
+
+.regular-letter:hover {
+  background-color: var(--blue);
+  color: var(--white);
+}
+
+.disabled-regular-letter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 74px;
+  height: 84px;
+  font-size: 48px;
+  color: var(--dark-navy);
+  border-radius: 24px;
+  border: none;
+  background-color: #46415c;
+}
+
+.selectable-category {
+  font-size: 48px;
+  color: var(--white);
+  width: 503px;
+  height: 190px;
+  border-radius: 40px;
+  border: none;
+  appearance: none;
+  background-color: var(--blue);
+  box-shadow: inset 0 -2px 0 3px rgba(20, 14, 102, 1),
+    inset 0 1px 0 6px rgba(60, 116, 255, 1);
+  cursor: pointer;
+  transition: 0.2s ease-in;
+}
+
+.selectable-category:hover {
+  background-color: var(--blue-hover);
+}
+
+.play-button {
+  width: 200px;
+  height: 200px;
+  border-radius: 999px;
+  border: solid 1px black;
+  cursor: pointer;
+  background: linear-gradient(to bottom, #fe71fe, #7199ff);
+  box-shadow: inset 0 -4px 0 5px rgba(36, 48, 65, 1),
+    inset 0 -12px 0 11px rgba(157, 45, 245, 1);
+  transition: 0.2s ease-in;
+}
+
+.play-button:hover {
+  background: linear-gradient(to bottom, #fe71fe, #b6caff);
+}
+
+/*--------------------------------------------------------------------
+  Media Queries
+  --------------------------------------------------------------------*/
+@media only screen and (min-width: 375px) {
+  body {
+    background-image: url("./assets/images/background-tablet.svg");
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  body {
+    background-image: url("./assets/images/background-desktop.svg");
+  }
+}
