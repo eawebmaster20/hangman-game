@@ -5,23 +5,10 @@
     </header>
 
     <section id="category-list">
-        <div class="selectable-category">
-            <h3>Movies</h3>
-        </div>
-        <div class="selectable-category">
-            <h3>TV Shows</h3>
-        </div>
-        <div class="selectable-category">
-            <h3>Countries</h3>
-        </div>
-        <div class="selectable-category">
-            <h3>Capital Cities</h3>
-        </div>
-        <div class="selectable-category">
-            <h3>Animals</h3>
-        </div>
-        <div class="selectable-category">
-            <h3>Sports</h3>
-        </div>
+        @for(category of crudService.categories; track category){
+            <div class="selectable-category">
+                <h3>{{category[0]}}</h3>
+            </div>
+        }
     </section>
 </main>
