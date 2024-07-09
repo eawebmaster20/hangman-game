@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { BackButtonComponent } from '../back-button/back-button.component';
+import { CrudService } from '../../services/crud.service';
 
 
 
@@ -11,6 +12,11 @@ import { BackButtonComponent } from '../back-button/back-button.component';
   styleUrl: './category.component.scss'
 })
 
-export class CategoryComponent {
-
+export class CategoryComponent implements OnInit {
+  constructor(public crudService: CrudService){}
+  ngOnInit(): void {
+    this.crudService.getGameData().subscribe((res:any) => {
+      this.crudService.categories = Object.entries(res.categories);
+    });
+  }
 }
