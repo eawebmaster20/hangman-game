@@ -1,58 +1,57 @@
 //mobile view
-.letters-layout{
-    max-width: 324px;
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    gap: 24px;
-}
-#letter-container{
-    max-width:109px;
-    width:30px;
-    height: 56px;
-    border: none;
-    border-radius: 8px;
-    font-size: 24px;
-    color: var(--dark-navy);
-    background-color: var(--white);
-    cursor: pointer;
+.letters-layout {
+  //   max-width: 324px;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 24px;
+  margin: 118px 0 0 0;
 }
 
 .letters-layout div {
-    display: flex;  
-    gap: 10px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
 }
 
-//tablet
-@media only screen and (min-width: 376px){
-    .letters-layout{
-        max-width: 704px;
-        display: flex;
-        flex-direction: column;
-        align-items: start;
-        gap: 24px;
-    }
-    #letter-container{
-        max-width:109px;
-        width:64px;
-        height: 84px;
-        border: none;
-        border-radius: 24px;
-        font-size: 48px;
-        color: var(--dark-navy);
-        background-color: var(--white);
-        cursor: pointer;
-    }
-    
-    .letters-layout div {
-        display: flex;  
-        gap: 16px;
-    }
-}
-#letter-container:hover{
-    background-color: var(--blue);
-    color: var(--white);
+.letters-layout div button {
+  //   flex-grow: 1;
+  font-size: 24px;
+  border: none;
+  color: var(--dark-navy);
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.1s ease-in;
 }
 
+.letters-layout div button:hover {
+  background-color: var(--blue);
+  color: white;
+}
 
+@media only screen and (min-width: 500px) {
+  .letters-layout div button {
+    font-size: 48px;
+    // padding: 13px 23px;
+    // border-radius: 24px;
+  }
+}
 
+@media only screen and (min-width: 720px) {
+  .letters-layout div button {
+    font-size: 48px;
+    padding: 13px 23px;
+    border-radius: 24px;
+  }
+}
+
+@media only screen and (min-width: 1095px) {
+  .letters-layout div button {
+    font-size: 48px;
+    padding: 13px 46px;
+    border-radius: 24px;
+  }
+}
