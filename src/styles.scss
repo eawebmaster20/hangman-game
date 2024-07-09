@@ -21,7 +21,7 @@ body {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  height: 100vh;
+  min-height: 100vh;
   color: var(--white);
 }
 
@@ -176,6 +176,7 @@ body {
 @media only screen and (min-width: 375px) {
   body {
     background-image: url("./assets/images/background-tablet.svg");
+    
   }
 }
 
