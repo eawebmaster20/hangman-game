@@ -1,32 +1,33 @@
 @import url('https://fonts.googleapis.com/css2?family=Mouse+Memoirs&display=swap');
 
 
-.container {
-    max-width: 86%;
-    height: 80%;
-    margin: auto;
-    font-family: "Mouse Memoirs", sans-serif;
+.instruct-container {
+    background-image: url("../../../assets/images/background-mobile.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    padding: 32px;
 }
-.heading-container {
-    margin: 35px auto;
+.header-container {
+    margin: 15px auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 5px 0;
 }
 
-.heading-container h1 {
+.header-container h1 {
     font-size: 58px;
     background-image: linear-gradient(#67B6FF, #FFFFFF);
     color: transparent;
     background-clip: text;
-    -webkit-text-stroke: 1.5px #243041;
+    -webkit-text-stroke: 1px #243041;
     font-weight: 700;
 
 }
 
 main {
-    margin-top: 65px;
+    margin-top: 45px;
     margin-bottom: 20px;
     display: grid;
     gap: 24px;
