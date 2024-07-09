@@ -16,6 +16,11 @@ button {
   font-family: "Mouse Memoirs", sans-serif;
 }
 
+a {
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
 body {
   background-image: url("./assets/images/background-mobile.svg");
   background-repeat: no-repeat;
@@ -151,6 +156,9 @@ body {
 }
 
 .play-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 200px;
   height: 200px;
   border-radius: 999px;
