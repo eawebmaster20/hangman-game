@@ -11,9 +11,9 @@ export const routes: Routes = [
     import('./components/how-to-play/how-to-play.component')
         .then(m => m.HowToPlayComponent)
     },
-    // { path: 'main-game',loadComponent: () => 
-    //   import('./components/main-game/main-game.component')
-    //       .then(m => m.MainGameComponent)
-    //   }
+    { path: 'category-pick',loadComponent: () => 
+      import('./components/category-component')
+          .then(m => m.CategoryComponent)
+    }
     
 ];
