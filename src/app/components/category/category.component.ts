@@ -20,10 +20,14 @@ export class CategoryComponent implements OnInit {
   ngOnInit(): void {
     this.crudService.getGameData().subscribe((res:any) => {
       this.crudService.categories = Object.entries(res.categories);
+      console.log(res)
     });
+
   }
 
-  routeToGame(item: ICategoryItem){
-    this.router.navigate([`/main-game/${item.name}`]); 
+  routeToGame(category: [string ,ICategoryItem[]]){
+    const name = category[0].replace(/ /g,"-").toLowerCase();
+    this.router.navigate([`/main-game/${name}`]); 
+    console.log(name)
   }
 }
