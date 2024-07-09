@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Mouse+Memoirs&display=swap');
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    display: grid;
+    place-items: center;
+}
+
+.lightbox {
+    width: 100%;
+    height: 100%;
+    background: black;
+    position: absolute;
+    z-index: 0;
+    opacity: .5;
+}
+
+.box-container {
+    width: 324px;
+    height: 445px;
+    position: relative;
+}
+.top-box{
+    width: 324px;
+    height: 445px;
+    border-radius: 48px;
+    background: red;
+    position: absolute;
+    z-index: 1;
+    top: -7px;
+    background: linear-gradient(360deg, transparent, #2463FF)
+    // background: linear-gradient(360deg, rgba(20, 14, 102, .8), #2463FF)
+}
+.bottom-box{
+    width: 324px;
+    height: 445px;
+    border-radius: 48px;
+    position: absolute;
+    z-index: 2;
+}
+.bottom-box::before{
+    content: "";
+    width: 324px;
+    height: 430px;
+    border-radius: 48px;
+    position: absolute;
+    z-index: 5;
+    box-shadow: 0px 7px 0px rgba(20, 14, 102, .8);
+}
+
+.middle-box{
+    width: 324px;
+    height: 430px;
+    border-radius: 48px;
+    background: linear-gradient(180deg, #344ABA, rgba(0, 20, 121, 0.9));
+    position: absolute;
+    z-index: 4;
+}
+
+.box-title {
+    top: -3.5rem;
+    position: relative;
+    font-size: 90px;
+    text-align: center;
+    background: linear-gradient(to bottom, #67B6FF, #ffffff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.box-title::before {
+    content: "Paused";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: -1;
+    -webkit-text-stroke: 15px #243041;
+    -webkit-text-fill-color: transparent;
+}
+
+
+.options{
+    width: 324px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    gap: 2rem;
+    align-items: center;
+    padding-top: 0rem;
+    // background: yellow;
+}
+
+
+.selectable-category {
+    display: grid;
+    place-items: center;
+    font-size: 33px;
+    color: var(--white);
+    height: 62px;
+    border-radius: 40px;
+    border: none;
+    appearance: none;
+    cursor: pointer;
+    transition: 0.2s ease-in;
+}
+
+.selectable-category:first-child{
+    width: 226px;
+    background-color: var(--blue);
+    box-shadow: inset 0 -2px 0 3px rgba(20, 14, 102, 1),
+      inset 0 1px 0 6px rgba(60, 116, 255, 1);
+}
+
+.selectable-category:nth-child(2){
+    width: 275px;
+    background-color: var(--blue);
+    box-shadow: inset 0 -2px 0 3px rgba(20, 14, 102, 1),
+      inset 0 1px 0 6px rgba(60, 116, 255, 1);
+}
+
+.selectable-category:last-child{
+    width: 235px;
+    background: linear-gradient(180deg, #FE71FE, #7199FF);
+    box-shadow: inset 0 -2px 0 3px rgba(20, 14, 102, 1),
+      inset 0 1px 0 6px #C642FB;
+}
+
+
+.selectable-category:hover {
+    background-color: var(--blue-hover);
+}
+
+.last-selectable-category {
+    transition: 0.2s ease-in;
+}
+
+.last-selectable-category:hover{
+    background: linear-gradient(to bottom, #fe71fe, #b6caff);
+}
+
+/******************* MEDIA QUERIES FOR MODAL **************/
+
+@media only screen and (min-width: 768px) {
+
+}
