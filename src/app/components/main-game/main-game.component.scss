@@ -66,3 +66,25 @@
 h3.category {
   font-size: 40px;
 }
+
+@media only screen and (min-width: 470px) {
+  .health-container {
+    padding: 4px;
+    width: 160px;
+  }
+
+  .healthbar {
+    width: 65px;
+  }
+}
+
+@media only screen and (min-widht: 768px) {
+  .health-container {
+    padding: 10px;
+    width: 240px;
+  }
+
+  .healthbar {
+    width: 119px;
+  }
+}
