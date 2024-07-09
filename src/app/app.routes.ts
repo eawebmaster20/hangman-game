@@ -12,7 +12,7 @@ export const routes: Routes = [
         .then(m => m.HowToPlayComponent)
     },
     { path: 'category-pick',loadComponent: () => 
-      import('./components/category-component')
+      import('./components/category/category.component')
           .then(m => m.CategoryComponent)
     }
     
