@@ -31,6 +31,7 @@ body {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  min-height: 100vh;
   // height: 100%;
   color: var(--white);
 }
@@ -200,12 +201,19 @@ body {
 @media only screen and (min-width: 375px) {
   body {
     background-image: url("./assets/images/background-tablet.svg");
+    .selectable-category{
+      height: 187px;
+    }
   }
 }
 
 @media only screen and (min-width: 768px) {
   body {
     background-image: url("./assets/images/background-desktop.svg");
+
+    .selectable-category{
+      height: 190px;
+    }
   }
 }
 /* You can add global styles to this file, and also import other style files */
