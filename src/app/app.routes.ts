@@ -4,5 +4,5 @@ import { MainGameComponent } from './components/main-game/main-game.component';
 
 export const routes: Routes = [
   { path: '', component: StartGameComponent },
-  { path: '/main-game', component: MainGameComponent },
+  { path: 'main-game', component: MainGameComponent },
 ];
