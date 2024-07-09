@@ -1,0 +1,68 @@
+.container {
+  width: 100%;
+  height: 100%;
+  padding: 46px 25px;
+}
+
+.menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  background: linear-gradient(to bottom, #fe71fe, #7199ff);
+  border: solid 1px black;
+  cursor: pointer;
+  box-shadow: inset 0 -5px 0 -1px rgba(157, 45, 245, 0.25);
+}
+
+.menu:hover {
+  background: linear-gradient(to bottom, #fe71fe, #b6caff);
+}
+
+.menu svg {
+  height: 13px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.right {
+  display: flex;
+  align-items: center;
+}
+
+.right svg {
+  height: 24px;
+}
+
+.health-container {
+  padding: 4px;
+  width: 57px;
+  //   height: 16px;
+  background-color: white;
+  border-radius: 96px;
+  display: flex;
+  align-items: center;
+}
+
+.healthbar {
+  width: 21px;
+  height: 8px;
+  background-color: var(--dark-navy);
+  border-radius: 96px;
+}
+
+h3.category {
+  font-size: 40px;
+}
