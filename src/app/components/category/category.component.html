@@ -6,7 +6,7 @@
 
     <section id="category-list">
         @for(category of crudService.categories; track category){
-            <div class="selectable-category">
+            <div (click)="routeToGame(category)" class="selectable-category">
                 <h3>{{category[0]}}</h3>
             </div>
         }
