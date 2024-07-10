@@ -1,8 +1,10 @@
 <div class="letters-layout">
   @for(letter of keyLetters;track letter){
-    <div>
+  <div>
     @for(char of letter;track char){
-      <button id="letter-container">{{char}}</button>
+    <button (click)="keyClicked($event)" id="letter-container">
+      {{ char }}
+    </button>
     }
   </div>
   }
