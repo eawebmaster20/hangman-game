@@ -9,9 +9,7 @@ import { DataStateService } from '../../services/data-state.service';
   styleUrl: './letters-layout.component.scss',
 })
 export class LettersLayoutComponent {
-  constructor(private dataStateService: DataStateService) {
-    console.log(this.dataStateService.selectedCategory);
-  }
+  constructor(private dataStateService: DataStateService) {}
 
   @Output() getClickedKeyEvent = new EventEmitter<string>();
 
@@ -21,13 +19,8 @@ export class LettersLayoutComponent {
     ['S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'],
   ];
 
-  
-
   keyClicked(event: any) {
     let clickedLetter = event.target.innerText;
-    this.getClickedKeyEvent.emit(clickedLetter)
-    
+    this.getClickedKeyEvent.emit(clickedLetter);
   }
-
-  
 }

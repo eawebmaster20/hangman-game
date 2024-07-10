@@ -12,25 +12,37 @@ import { ModalComponent } from '../../modal/modal.component';
   styleUrl: './main-game.component.scss',
 })
 export class MainGameComponent {
- dataStateService = inject(DataStateService);
- modalService = inject(ModalService);
+  dataStateService = inject(DataStateService);
+  modalService = inject(ModalService);
 
-  constructor(public dataStateService: DataStateService){}
- displayHealthValue() {
-  console.log(this.dataStateService.healthValue)
- }
-
- checkGuess(letter:string){
-  if(!this.dataStateService.chosenPhrase.includes(letter)){
-    this.dataStateService.healthValue -= 25
-    console.log(this.dataStateService.healthValue)
+  constructor() {
+    // Generate random name
+    this.generateRandomName();
   }
-}
 
- getKeyClicked(key: string) {
-  if (this.dataStateService.userGuessedChars.length < 4) {
-    this.checkGuess(key);
-    this.dataStateService.getUserGuessedChars(key);
+  generateRandomName() {
+    let randomIndex = Math.floor(
+      Math.random() * this.dataStateService.selectedCategory.data.length
+    );
+    this.dataStateService.chosenPhrase =
+      this.dataStateService.selectedCategory.data[
+        randomIndex
+      ].name.toLowerCase();
+  }
+
+  checkGuess(letter: string) {
+    // If the chosen phrase doesn't not include the user's guess:
+    // Decrease the health value by 25
+    // Push the letter to the wrong guesses array
+    if (!this.dataStateService.chosenPhrase.includes(letter.toLowerCase())) {
+      this.dataStateService.healthValue -= 25;
+      this.dataStateService.userWrongGuesses.push(letter.toLowerCase());
+    } else {
+      this.dataStateService.userGuessedChars.push(letter.toLowerCase());
     }
- }
+  }
+
+  getKeyClicked(key: string) {
+    this.checkGuess(key);
+  }
 }

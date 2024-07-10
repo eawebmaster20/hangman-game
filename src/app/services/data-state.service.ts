@@ -8,12 +8,13 @@ import { Router } from '@angular/router';
 
 export class DataStateService {
   categories!: CategoryObj;
-  selectedCategory: {name:string, data:ICategoryItem[]}={name:'',data:[]} || {}
-  indexTracking:CategoryObj= {"Animals" :[{"name": 'Elephant', selected: false}]}
-  userGuessedChars: string[] = [];
-  chosenPhrase = "Breaking Bad";
-  healthValue = 100
-  healthStatus = `${this.healthValue}%`
+  selectedCategory: { name: string; data: ICategoryItem[] } =
+    { name: '', data: [] } || {};
+  userGuessedChars: string[] = []; // user's correctly guessed characters
+  userWrongGuesses: string[] = [];
+  chosenPhrase: string = '';
+  healthValue = 100;
+  healthStatus = `${this.healthValue}%`;
 
   constructor(private router: Router) {}
 
@@ -23,33 +24,14 @@ export class DataStateService {
       name: categoryKey,
       data: this.categories[categoryKey],
     };
-    console.log(this.selectedCategory);
-    this.getRandomWord()
-    this.router.navigate(['main-game'])
 
-  }
 
-  getRandomWord(){
-    const wordIndex: number = Math.floor( Math.random() * (this.selectedCategory.data.length -1));
-    if (!this.indexTracking.hasOwnProperty(this.selectedCategory.name)) {
-      this.indexTracking[this.selectedCategory.name] = [];
-    }
-    this.indexTracking[this.selectedCategory.name]?.push(this.selectedCategory.data[wordIndex]) 
-    console.log(this.indexTracking)
-    console.log(this.selectedCategory.data[wordIndex])
-    return this.selectedCategory.data[wordIndex]
-  }
-
-  getUserGuessedChars(guessedChar: string) {
-    if (!this.userGuessedChars.includes(guessedChar)) {
-      this.userGuessedChars.push(guessedChar);
-      console.log(this.userGuessedChars);
-    }
+    this.router.navigate(['main-game']);
   }
 
   detectWinOrLoss() {
-    if (this.userGuessedChars.length === 4) {
-      console.log('Game Over!');
+    if (this.userWrongGuesses.length === 4) {
+      // User lost
     }
   }
 }
