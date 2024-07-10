@@ -9,6 +9,9 @@ export class DataStateService {
   categories!: CategoryObj;
   selectedCategory!: { name: string; data: ICategoryItem[] };
   userGuessedChars: string[] = [];
+  chosenPhrase = "Breaking Bad";
+  healthValue = 100
+  healthStatus = `${this.healthValue}%`
 
   constructor(private router: Router) {}
   routeToGame(categoryKey: any) {

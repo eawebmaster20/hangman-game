@@ -17,8 +17,8 @@
 
     <div class="right">
       <div class="health-container">
-        <div class="healthbar"></div>
-      </div>
+        <div class="healthbar" [style.width]="dataStateService.healthValue+'%'"></div>
+      </div> 
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="54"
@@ -47,5 +47,5 @@
     </div>
   </div>
 
-  <app-letters-layout />
+  <app-letters-layout (getClickedKeyEvent)="getKeyClicked($event)" />
 </div>
