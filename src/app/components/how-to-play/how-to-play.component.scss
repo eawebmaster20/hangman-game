@@ -2,7 +2,6 @@
 
 
 .instruct-container {
-    background-image: url("../../../assets/images/background-mobile.svg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -65,28 +64,29 @@ h2 {
 
 
 
-@media only screen and (min-width: 425px) {
+@media only screen and (min-width: 375px) {
     body {
         background-image: url("../../../assets/images/background-tablet.svg");
       .selectable-category{
         height: 187px;
       }
     }
+    
 
     .text-container {
         display: grid;
         gap: 20px;
-        grid-template-columns: repeat(14, 1fr);
+        grid-template-columns: repeat(6, 1fr);
         grid-template-rows: repeat(1, 1fr);
 
         h2 {
             font-size: 40px;
-            grid-column: 2/14;
+            grid-column: 2/7;
             margin: 0;
         }
         p {
             font-size: 20px;
-            grid-column: 2/14;
+            grid-column: 2/7;
         }
      
     }
@@ -100,18 +100,76 @@ h2 {
         grid-row: 1/4;
         width: 100%;
         height: 100%;
-        font-size: 600%;
+        font-size:3rem;
     }
 
 
   }
   
-//   @media only screen and (min-width: 768px) {
-//     body {
-//       background-image: url("./assets/images/background-desktop.svg");
+  @media only screen and (min-width: 768px) {
+    body {
+      background-image: url("../../../assets/images/background-desktop.svg");
   
-//       .selectable-category{
-//         height: 190px;
-//       }
-//     }
-//   }
+      .selectable-category{
+        height: 190px;
+      }
+    }
+
+    .instruct-container {
+        max-width: 90% ;
+        margin: auto;
+    }
+
+    .header-container {
+        margin-top: 0;
+        justify-content: start;
+
+    }
+
+    .header-container h1 {
+        font-size: 9rem;
+        -webkit-text-stroke: 3px #243041;
+        margin-left: auto;
+        margin-right: auto;
+    
+    }
+    
+
+    main {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+ 
+   
+}
+
+    div.text-container {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 4em;
+
+        h2 {
+            font-size: 4rem;
+        }
+
+        p {
+            font-size: 2rem;
+            line-height: 1.5em;
+    
+           
+        }
+     
+    }
+
+  .number {
+      display: inline-block;
+       width:  auto;
+       height: auto;
+       font-size: 5rem;
+    
+    }
+
+
+   
+  }
