@@ -1,22 +1,27 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { BackButtonComponent } from '../back-button/back-button.component';
 import { CrudService } from '../../services/crud.service';
+import { DataStateService } from '../../services/data-state.service';
+import { RouterLink } from '@angular/router';
 
 
 
 @Component({
   selector: 'app-category',
   standalone: true,
-  imports: [BackButtonComponent],
+  imports: [BackButtonComponent, RouterLink],
   templateUrl: './category.component.html',
   styleUrl: './category.component.scss'
 })
 
 export class CategoryComponent implements OnInit {
-  constructor(public crudService: CrudService){}
+  categoryList:string[]=[]
+  constructor(public dataStateService: DataStateService, public crudService: CrudService){}
   ngOnInit(): void {
     this.crudService.getGameData().subscribe((res:any) => {
-      this.crudService.categories = Object.entries(res.categories);
+      this.dataStateService.categories = res.categories;
+      this.categoryList = Object.keys(res.categories);
+      console.log(this.dataStateService.categories);
     });
   }
 }

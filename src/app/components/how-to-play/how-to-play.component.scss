@@ -1,64 +1,60 @@
-@import url('https://fonts.googleapis.com/css2?family=Mouse+Memoirs&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Mouse+Memoirs&display=swap");
 
 .container {
-    max-width: 86%;
-    height: 80%;
-    margin: auto;
-    font-family: "Mouse Memoirs", sans-serif;
+  max-width: 86%;
+  // height: 80%;
+  margin: auto;
+  font-family: "Mouse Memoirs", sans-serif;
 }
 .heading-container {
-    margin: 35px auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 5px 0;
+  margin: 35px auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 0;
 }
 
 .heading-container h1 {
-    font-size: 58px;
-    background-image: linear-gradient(#67B6FF, #FFFFFF);
-    color: transparent;
-    background-clip: text;
-    -webkit-text-stroke: 1.5px #243041;
-    font-weight: 700;
-
+  font-size: 58px;
+  background-image: linear-gradient(#67b6ff, #ffffff);
+  color: transparent;
+  background-clip: text;
+  -webkit-text-stroke: 1.5px #243041;
+  font-weight: 700;
 }
 
 main {
-    margin-top: 65px;
-    margin-bottom: 20px;
-    display: grid;
-    gap: 24px;
-   
+  margin-top: 65px;
+  margin-bottom: 20px;
+  display: grid;
+  gap: 24px;
 }
 
 .text-container {
-    background-color: white;
-    display: flex;
-    gap: 16px;
-    flex-wrap: wrap;
-    border-radius: 20px;
-    padding: 32px;
+  background-color: white;
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  border-radius: 20px;
+  padding: 32px;
 }
 
 .text-container * {
-    letter-spacing: 0.6px;
-    font-weight: 500;
+  letter-spacing: 0.6px;
+  font-weight: 500;
 }
 
 .text-container p {
-    line-height: 1.5rem;
-    font-size: 1.2rem;
-    color: #887DC0;
+  line-height: 1.5rem;
+  font-size: 1.2rem;
+  color: #887dc0;
 }
 h2 {
-    font-size: 24px;
-    color: #261676;
+  font-size: 24px;
+  color: #261676;
 }
 
 .number {
-    color: #2463FF;
-    font-size: 24px;
+  color: #2463ff;
+  font-size: 24px;
 }
-
