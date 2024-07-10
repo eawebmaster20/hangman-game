@@ -10,13 +10,14 @@ import { DataStateService } from '../../services/data-state.service';
   templateUrl: './start-game.component.html',
   styleUrl: './start-game.component.scss',
 })
-export class StartGameComponent implements OnInit{
-constructor(public dataStateService: DataStateService, public crudService: CrudService){}
+export class StartGameComponent implements OnInit {
+  constructor(
+    public dataStateService: DataStateService,
+    public crudService: CrudService
+  ) {}
   ngOnInit(): void {
-    this.crudService.getGameData().subscribe((res:any) => {
+    this.crudService.getGameData().subscribe((res: any) => {
       this.dataStateService.categories = res.categories;
-      console.log(this.dataStateService.categories );
-      
     });
   }
 }

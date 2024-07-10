@@ -7,11 +7,13 @@ import { Router } from '@angular/router';
 })
 export class DataStateService {
   categories!: CategoryObj;
-  selectedCategory:{name:string, data:ICategoryItem[]}={name:'',data:[]} || {}
-  userGuessedChars: string[] = [];
-  chosenPhrase = "Breaking Bad";
-  healthValue = 100
-  healthStatus = `${this.healthValue}%`
+  selectedCategory: { name: string; data: ICategoryItem[] } =
+    { name: '', data: [] } || {};
+  userGuessedChars: string[] = []; // user's correctly guessed characters
+  userWrongGuesses: string[] = [];
+  chosenPhrase: string = '';
+  healthValue = 100;
+  healthStatus = `${this.healthValue}%`;
 
   constructor(private router: Router) {}
   routeToGame(categoryKey: any) {
@@ -19,20 +21,13 @@ export class DataStateService {
       name: categoryKey,
       data: this.categories[categoryKey],
     };
-    console.log(this.selectedCategory);
-    this.router.navigate(['main-game'])
-  }
 
-  getUserGuessedChars(guessedChar: string) {
-    if (!this.userGuessedChars.includes(guessedChar)) {
-      this.userGuessedChars.push(guessedChar);
-      console.log(this.userGuessedChars);
-    }
+    this.router.navigate(['main-game']);
   }
 
   detectWinOrLoss() {
-    if (this.userGuessedChars.length === 4) {
-      console.log('Game Over!');
+    if (this.userWrongGuesses.length === 4) {
+      // User lost
     }
   }
 }
