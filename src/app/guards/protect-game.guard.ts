@@ -15,6 +15,10 @@ export class ProtectGameGuard implements CanActivate {
     if (this.dataStateService.selectedCategory.name) {
       return true;
     }
+    if (localStorage.getItem('selectedCategory')?.length) {
+      this.dataStateService.selectedCategory = JSON.parse(localStorage.getItem('selectedCategory')!)
+      return true;
+    }
     this.router.navigate(['/category-pick']);
     return false;
   }

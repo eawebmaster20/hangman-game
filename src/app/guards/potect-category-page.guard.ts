@@ -15,6 +15,10 @@ export class potectCategoryPageGuard implements CanActivate {
     if (this.dataStateService.categories && Object.keys(this.dataStateService.categories).length>0) {
       return true;
     }
+    if (localStorage.getItem('categories')?.length) {
+      this.dataStateService.categories = JSON.parse(localStorage.getItem('categories')!)
+      return true;
+    }
     this.router.navigate(['/']);
     return false;
   }

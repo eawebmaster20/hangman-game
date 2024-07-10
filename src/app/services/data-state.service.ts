@@ -24,8 +24,7 @@ export class DataStateService {
       name: categoryKey,
       data: this.categories[categoryKey],
     };
-
-
+    localStorage.setItem('selectedCategory', JSON.stringify(this.selectedCategory))
     this.router.navigate(['main-game']);
   }
 

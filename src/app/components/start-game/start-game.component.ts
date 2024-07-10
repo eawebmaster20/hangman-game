@@ -16,8 +16,14 @@ export class StartGameComponent implements OnInit {
     public crudService: CrudService
   ) {}
   ngOnInit(): void {
+    if (localStorage.getItem('categories')?.length) {
+      this.dataStateService.categories = JSON.parse(localStorage.getItem('categories')!)
+      return;
+    }
     this.crudService.getGameData().subscribe((res: any) => {
       this.dataStateService.categories = res.categories;
+      localStorage.setItem('categories', JSON.stringify(res.categories))
+      return;
     });
   }
 }
