@@ -5,7 +5,7 @@ import { DataStateService } from '../services/data-state.service';
 
 @Injectable({
   providedIn: 'root'
-})
+}) 
 export class ProtectGameGuard implements CanActivate {
   constructor(private router: Router,private dataStateService:DataStateService){}
   canActivate(
