@@ -22,5 +22,6 @@ export class CategoryComponent implements OnInit {
   constructor(public dataStateService: DataStateService, public crudService: CrudService ,private router: Router){}
   ngOnInit(): void {
     this.categoryList = Object.keys(this.dataStateService.categories);
+    
   }
 }
