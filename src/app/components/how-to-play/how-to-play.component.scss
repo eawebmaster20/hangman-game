@@ -1,60 +1,185 @@
-@import url("https://fonts.googleapis.com/css2?family=Mouse+Memoirs&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Mouse+Memoirs&display=swap');
 
-.container {
-  max-width: 86%;
-  // height: 80%;
-  margin: auto;
-  font-family: "Mouse Memoirs", sans-serif;
-}
-.heading-container {
-  margin: 35px auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 5px 0;
+
+
+
+.instruct-container {
+    padding: 0 1.8em;
+    height: 100vh;
 }
 
-.heading-container h1 {
-  font-size: 58px;
-  background-image: linear-gradient(#67b6ff, #ffffff);
-  color: transparent;
-  background-clip: text;
-  -webkit-text-stroke: 1.5px #243041;
-  font-weight: 700;
+
+.header-container {
+    margin-top: 1.6em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 0;
+}
+
+.header-container h1 {
+    font-size: 3rem;
+    background-image: linear-gradient(#67B6FF, #FFFFFF);
+    color: transparent;
+    background-clip: text;
+    -webkit-text-stroke: 1px #243041;
+    font-weight: 700;
+    margin: 0;
+
 }
 
 main {
-  margin-top: 65px;
-  margin-bottom: 20px;
-  display: grid;
-  gap: 24px;
+    margin-top: 3em;
+    display: grid;
+    gap: 1.2em;
+   
 }
 
 .text-container {
-  background-color: white;
-  display: flex;
-  gap: 16px;
-  flex-wrap: wrap;
-  border-radius: 20px;
-  padding: 32px;
+    background-color: white;
+    display: flex;
+    gap: 1.2em;
+    flex-wrap: wrap;
+    border-radius: 20px;
+    padding: 2rem;
 }
 
 .text-container * {
-  letter-spacing: 0.6px;
-  font-weight: 500;
+    letter-spacing: 0.6px;
+    font-weight: 500;
 }
 
 .text-container p {
-  line-height: 1.5rem;
-  font-size: 1.2rem;
-  color: #887dc0;
+    line-height: 1.35rem;
+    font-size: 1.2rem;
+    color: #887DC0;
 }
 h2 {
-  font-size: 24px;
-  color: #261676;
+    font-size: 1.5rem;
+    color: #261676;
 }
 
 .number {
-  color: #2463ff;
-  font-size: 24px;
+    color: #2463FF;
+    font-size: 24px;
 }
+
+
+
+@media only screen and (min-width: 480px) {
+    body {
+        background-image: url("../../../assets/images/background-tablet.svg");
+      .selectable-category{
+        height: 187px;
+      }
+
+    }
+    
+    .header-container {
+        justify-content: start;
+        margin-bottom: 1.8em;
+
+        h1{
+            margin-left: auto;
+            margin-right: auto;  
+        }
+
+    }
+    .text-container {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        grid-template-rows: repeat(1, 1fr);
+
+        h2 {
+            font-size: 1.8rem;
+            grid-column: 2/7;
+            margin: 0;
+        }
+        p {
+            font-size: 1.3rem;
+            line-height: 1.5rem;
+            grid-column: 2/7;
+        }
+     
+    }
+
+    .number {
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        grid-column: 1/2;
+        grid-row: 1/4;
+        font-size: 3.5rem;
+    }
+
+
+  }
+  
+  @media only screen and (min-width: 980px) {
+    body {
+      background-image: url("../../../assets/images/background-desktop.svg");
+      .selectable-category{
+        height: 190px;
+      }
+    }
+
+    .instruct-container {
+        padding: 0 3em;
+
+    }
+
+
+
+    .header-container {
+        justify-content: start;
+        margin-bottom: 2em;
+
+    }
+
+    .header-container h1 {
+        font-size: 9rem;
+        -webkit-text-stroke: 3px #243041;
+        margin-left: auto;
+        margin-right: auto;    
+    }
+    
+
+    main {
+        margin: auto;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 1fr;
+        gap: 2em;
+    }
+
+    div.text-container {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        padding: 1.6em;
+
+
+        h2 {
+            font-size: 3.5rem;
+        }
+
+        p {
+            font-size: 2rem;
+            line-height: 2.5rem;
+          
+    
+           
+        }
+     
+    }
+
+  .number {
+      display: inline-block;
+       width:  auto;
+       height: auto;
+       font-size: 4.5rem;    
+    }
+   
+  }

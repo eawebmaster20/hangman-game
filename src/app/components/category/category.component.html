@@ -7,7 +7,7 @@
     <section id="category-list">
         @for(category of categoryList; track category){
             <div (click)="dataStateService.routeToGame(category)" class="selectable-category">
-                <h3>{{category}}</h3>
+                <h3 class="selectable-text">{{category.toUpperCase()}}</h3>
             </div>
         }
     </section>
