@@ -41,6 +41,7 @@ main{
         }
 
         #category-list{
+            border: 3px solid #901;
             padding: 0.5rem 0;
             grid-template-columns: repeat(2, 1fr); 
             grid-template-rows: repeat(3, auto);
@@ -62,8 +63,10 @@ main{
 @media only screen and (min-width: 768px) {
     main{
         padding: 3.25rem 4rem 4rem 4rem;
+        width: 100%;
 
         #category-list{
+            width: 100%;
             border: 2px solid #4d9;
             margin: 0;
 
