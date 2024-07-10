@@ -1,14 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Mouse+Memoirs&display=swap');
 
 
+
+
 .instruct-container {
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    padding: 32px;
+    padding: 0 1.8em;
+    height: 100vh;
+    border: 1px solid red;
 }
 .header-container {
-    margin: 15px auto;
+    margin-top: 1.6em;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -16,30 +17,30 @@
 }
 
 .header-container h1 {
-    font-size: 58px;
+    font-size: 3rem;
     background-image: linear-gradient(#67B6FF, #FFFFFF);
     color: transparent;
     background-clip: text;
     -webkit-text-stroke: 1px #243041;
     font-weight: 700;
+    margin: 0;
 
 }
 
 main {
-    margin-top: 45px;
-    margin-bottom: 20px;
+    margin-top: 3em;
     display: grid;
-    gap: 24px;
+    gap: 1.2em;
    
 }
 
 .text-container {
     background-color: white;
     display: flex;
-    gap: 16px;
+    gap: 1.2em;
     flex-wrap: wrap;
     border-radius: 20px;
-    padding: 32px;
+    padding: 2rem;
 }
 
 .text-container * {
@@ -48,12 +49,12 @@ main {
 }
 
 .text-container p {
-    line-height: 1.5rem;
+    line-height: 1.35rem;
     font-size: 1.2rem;
     color: #887DC0;
 }
 h2 {
-    font-size: 24px;
+    font-size: 1.5rem;
     color: #261676;
 }
 
@@ -64,18 +65,19 @@ h2 {
 
 
 
-@media only screen and (min-width: 375px) {
+@media only screen and (min-width: 432px) {
     body {
         background-image: url("../../../assets/images/background-tablet.svg");
       .selectable-category{
         height: 187px;
       }
+
     }
     
 
     .text-container {
         display: grid;
-        gap: 20px;
+        gap: 16px;
         grid-template-columns: repeat(6, 1fr);
         grid-template-rows: repeat(1, 1fr);
 
@@ -170,6 +172,7 @@ h2 {
     
     }
 
+  
 
    
   }
