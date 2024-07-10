@@ -36,6 +36,7 @@ export class DataStateService {
     }
     this.indexTracking[this.selectedCategory.name]?.push(this.selectedCategory.data[wordIndex]) 
     console.log(this.indexTracking)
+    console.log(this.selectedCategory.data[wordIndex])
     return this.selectedCategory.data[wordIndex]
   }
 
