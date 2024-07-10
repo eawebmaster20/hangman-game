@@ -14,6 +14,8 @@ import { ModalComponent } from '../../modal/modal.component';
 export class MainGameComponent {
  dataStateService = inject(DataStateService);
  modalService = inject(ModalService);
+
+  constructor(public dataStateService: DataStateService){}
  displayHealthValue() {
   console.log(this.dataStateService.healthValue)
  }
@@ -31,5 +33,4 @@ export class MainGameComponent {
     this.dataStateService.getUserGuessedChars(key);
     }
  }
- 
 }

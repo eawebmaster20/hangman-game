@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
 })
 export class DataStateService {
   categories!: CategoryObj;
-  selectedCategory!: { name: string; data: ICategoryItem[] };
+  selectedCategory:{name:string, data:ICategoryItem[]}={name:'',data:[]} || {}
   userGuessedChars: string[] = [];
   chosenPhrase = "Breaking Bad";
   healthValue = 100
@@ -20,7 +20,7 @@ export class DataStateService {
       data: this.categories[categoryKey],
     };
     console.log(this.selectedCategory);
-    this.router.navigate([categoryKey.toLowerCase().replace(' ', '-')]);
+    this.router.navigate(['main-game'])
   }
 
   getUserGuessedChars(guessedChar: string) {
