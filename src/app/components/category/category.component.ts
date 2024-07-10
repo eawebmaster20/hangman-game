@@ -15,10 +15,13 @@ import { RouterLink } from '@angular/router';
 })
 
 export class CategoryComponent implements OnInit {
+  categoryList:string[]=[]
   constructor(public dataStateService: DataStateService, public crudService: CrudService){}
   ngOnInit(): void {
     this.crudService.getGameData().subscribe((res:any) => {
-      this.dataStateService.categories = Object.entries(res.categories);
+      this.dataStateService.categories = res.categories;
+      this.categoryList = Object.keys(res.categories);
+      console.log(this.dataStateService.categories);
     });
   }
 }
