@@ -1,36 +1,10 @@
 <div class="letters-layout">
-  <div id="first-row">
-    <button id="letter-container">A</button>
-    <button id="letter-container">B</button>
-    <button id="letter-container">C</button>
-    <button id="letter-container">D</button>
-    <button id="letter-container">E</button>
-    <button id="letter-container">F</button>
-    <button id="letter-container">G</button>
-    <button id="letter-container">H</button>
-    <button id="letter-container">I</button>
-  </div>
-
-  <div id="second-row">
-    <button id="letter-container">J</button>
-    <button id="letter-container">K</button>
-    <button id="letter-container">L</button>
-    <button id="letter-container">M</button>
-    <button id="letter-container">N</button>
-    <button id="letter-container">O</button>
-    <button id="letter-container">P</button>
-    <button id="letter-container">Q</button>
-    <button id="letter-container">R</button>
-  </div>
-
-  <div id="third-row">
-    <button id="letter-container">S</button>
-    <button id="letter-container">T</button>
-    <button id="letter-container">U</button>
-    <button id="letter-container">V</button>
-    <button id="letter-container">W</button>
-    <button id="letter-container">V</button>
-    <button id="letter-container">Y</button>
-    <button id="letter-container">Z</button>
+      @for(letter of keyLetters;track letter){
+        <div>
+        @for(char of letter;track char){
+          <button id="letter-container">{{char}}</button>
+        }
+      </div>
+      }
   </div>
 </div>
