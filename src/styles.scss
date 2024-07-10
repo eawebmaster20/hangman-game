@@ -11,9 +11,18 @@
   --blue-hover: #5b8aff;
 }
 
+html {
+  height: 100%;
+}
+
 body,
 button {
   font-family: "Mouse Memoirs", sans-serif;
+}
+
+a {
+  text-decoration: none;
+  text-transform: uppercase;
 }
 
 body {
@@ -21,8 +30,9 @@ body {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  height: 100vh;
+  height: 100%;
   color: var(--white);
+  // border: solid 1px pink;
 }
 
 /* Button One Styles */
@@ -132,10 +142,13 @@ body {
 }
 
 .selectable-category {
-  font-size: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
   color: var(--white);
-  width: 503px;
-  height: 190px;
+  width: 324px;
+  height: 77px;
   border-radius: 40px;
   border: none;
   appearance: none;
@@ -151,6 +164,9 @@ body {
 }
 
 .play-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 200px;
   height: 200px;
   border-radius: 999px;
@@ -166,18 +182,37 @@ body {
   background: linear-gradient(to bottom, #fe71fe, #b6caff);
 }
 
+.container {
+  padding: 40px 25px;
+  // border: solid 1px pink;
+  width: 100%;
+  height: 100%;
+}
+
+.main-content {
+  margin: 80px 0;
+  border: solid 1px pink;
+}
+
 /*--------------------------------------------------------------------
   Media Queries
   --------------------------------------------------------------------*/
 @media only screen and (min-width: 375px) {
   body {
     background-image: url("./assets/images/background-tablet.svg");
+    .selectable-category{
+      height: 187px;
+    }
   }
 }
 
 @media only screen and (min-width: 768px) {
   body {
     background-image: url("./assets/images/background-desktop.svg");
+
+    .selectable-category{
+      height: 190px;
+    }
   }
 }
 /* You can add global styles to this file, and also import other style files */
