@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { LettersLayoutComponent } from '../letters-layout/letters-layout.component';
+import { DataStateService } from '../../services/data-state.service';
 
 @Component({
   selector: 'app-main-game',
@@ -8,4 +9,6 @@ import { LettersLayoutComponent } from '../letters-layout/letters-layout.compone
   templateUrl: './main-game.component.html',
   styleUrl: './main-game.component.scss',
 })
-export class MainGameComponent {}
+export class MainGameComponent {
+  constructor(public dataStateService: DataStateService){}
+}
