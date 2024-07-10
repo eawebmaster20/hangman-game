@@ -21,10 +21,6 @@ export class CategoryComponent implements OnInit {
   categoryList:string[]=[]
   constructor(public dataStateService: DataStateService, public crudService: CrudService ,private router: Router){}
   ngOnInit(): void {
-    this.crudService.getGameData().subscribe((res:any) => {
-      this.dataStateService.categories = res.categories;
-      this.categoryList = Object.keys(res.categories);
-      console.log(this.dataStateService.categories);
-    });
+    this.categoryList = Object.keys(this.dataStateService.categories);
   }
 }
