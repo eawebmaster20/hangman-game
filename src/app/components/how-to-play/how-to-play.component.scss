@@ -75,7 +75,16 @@ h2 {
 
     }
     
+    .header-container {
+        justify-content: start;
+        margin-bottom: 1.8em;
 
+        h1{
+            margin-left: auto;
+            margin-right: auto;  
+        }
+
+    }
     .text-container {
         display: grid;
         grid-template-columns: repeat(6, 1fr);
@@ -149,7 +158,7 @@ h2 {
         display: flex;
         flex-direction: column;
         flex-wrap: nowrap;
-        padding: 2em;
+        padding: 1.6em;
 
 
         h2 {
@@ -157,8 +166,8 @@ h2 {
         }
 
         p {
-            font-size: 2.5rem;
-            line-height: 2rem;
+            font-size: 2rem;
+            line-height: 2.5rem;
           
     
            
