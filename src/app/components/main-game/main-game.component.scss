@@ -56,6 +56,7 @@
 }
 
 .healthbar {
+  // width: 21px;
   width: 100%;
   height: 8px;
   background-color: var(--dark-navy);
@@ -73,7 +74,7 @@ h3.category {
   }
 
   .healthbar {
-    width: 65px;
+    width: 100%;
   }
 }
 
@@ -84,6 +85,6 @@ h3.category {
   }
 
   .healthbar {
-    width: 119px;
+    width: 100%;
   }
 }
