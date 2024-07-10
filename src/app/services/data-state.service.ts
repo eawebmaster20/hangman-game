@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 @Injectable({
   providedIn: 'root',
 })
+
 export class DataStateService {
   categories!: CategoryObj;
   selectedCategory: { name: string; data: ICategoryItem[] } =
@@ -16,11 +17,14 @@ export class DataStateService {
   healthStatus = `${this.healthValue}%`;
 
   constructor(private router: Router) {}
-  routeToGame(categoryKey: any) {
+
+  
+  routeToGame(categoryKey: string) {
     this.selectedCategory = {
       name: categoryKey,
       data: this.categories[categoryKey],
     };
+
 
     this.router.navigate(['main-game']);
   }
