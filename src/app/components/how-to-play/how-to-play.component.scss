@@ -1,4 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=Mouse+Memoirs&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Mouse+Memoirs&display=swap');
+
 
 
 
@@ -41,11 +42,11 @@ main {
     flex-wrap: wrap;
     border-radius: 20px;
     padding: 2rem;
-
+}
 
 .text-container * {
-  letter-spacing: 0.6px;
-  font-weight: 500;
+    letter-spacing: 0.6px;
+    font-weight: 500;
 }
 
 .text-container p {
@@ -59,10 +60,9 @@ h2 {
 }
 
 .number {
-  color: #2463ff;
-  font-size: 24px;
+    color: #2463FF;
+    font-size: 24px;
 }
-
 
 
 
@@ -183,4 +183,3 @@ h2 {
     }
    
   }
-
