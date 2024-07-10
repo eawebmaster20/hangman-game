@@ -6,9 +6,12 @@
         <div class="middle-box">
             <p class="box-title">Paused</p>
             <div class="options">
-                <p class="selectable-category">CONTINUE</p>
-                <p class="selectable-category">NEW CATEGORY</p>
-                <p class="selectable-category last-selectable-category">QUIT GAME</p>
+                <p (mouseover)="playHoverSound()" class="selectable-category"
+                    (click)="playClickOptionSound()">CONTINUE</p>
+                <p (mouseover)="playHoverSound()" 
+                    (click)="playClickOptionSound()"class="selectable-category">NEW CATEGORY</p>
+                <p (mouseover)="playHoverSound()"
+                    (click)="playClickOptionSound()" class="selectable-category last-selectable-category">QUIT GAME</p>
             </div>
         </div>
     </div>
