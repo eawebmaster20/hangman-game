@@ -5,9 +5,9 @@
     </header>
 
     <section id="category-list">
-        @for(category of dataStateService.categories; track category){
-            <div class="selectable-category">
-                <h3>{{category[0]}}</h3>
+        @for(category of categoryList; track category){
+            <div (click)="dataStateService.routeToGame(category)" class="selectable-category">
+                <h3>{{category}}</h3>
             </div>
         }
     </section>
