@@ -65,7 +65,7 @@ main{
         border: 2px solid #74d;
 
         #category-list{
-            // padding: 0.5rem 0;
+            
             grid-template-columns: repeat(3, 1fr); 
             grid-template-rows: repeat(2, auto);
             overflow: hidden;
