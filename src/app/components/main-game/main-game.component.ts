@@ -1,5 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { LettersLayoutComponent } from '../letters-layout/letters-layout.component';
+import { WordDisplayComponent } from '../word-display/word-display.component';
 import { DataStateService } from '../../services/data-state.service';
 import { ModalService } from '../../services/modal.service';
 import { ModalComponent } from '../../modal/modal.component';
@@ -7,7 +8,7 @@ import { ModalComponent } from '../../modal/modal.component';
 @Component({
   selector: 'app-main-game',
   standalone: true,
-  imports: [LettersLayoutComponent, ModalComponent],
+  imports: [LettersLayoutComponent, WordDisplayComponent, ModalComponent],
   templateUrl: './main-game.component.html',
   styleUrl: './main-game.component.scss',
 })
@@ -28,6 +29,7 @@ export class MainGameComponent {
       this.dataStateService.selectedCategory.data[
         randomIndex
       ].name.toLowerCase();
+    console.log(this.dataStateService.chosenPhrase);
   }
 
   checkGuess(letter: string) {
