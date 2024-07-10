@@ -6,7 +6,7 @@ import { DataStateService } from '../services/data-state.service';
 @Injectable({
   providedIn: 'root'
 }) 
-export class potectCategoryPageGuard implements CanActivate {
+export class protectCategoryPageGuard implements CanActivate {
   constructor(private router: Router,private dataStateService:DataStateService){}
   canActivate(
     route: ActivatedRouteSnapshot,

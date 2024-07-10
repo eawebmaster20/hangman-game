@@ -1,7 +1,7 @@
 import { Routes } from '@angular/router';
 import { StartGameComponent } from './components/start-game/start-game.component';
 import { ProtectGameGuard } from './guards/protect-game.guard';
-import { potectCategoryPageGuard } from './guards/potect-category-page.guard';
+import { protectCategoryPageGuard } from './guards/potect-category-page.guard';
 
 export const routes: Routes = [
   { path: '', component: StartGameComponent },
@@ -26,6 +26,6 @@ export const routes: Routes = [
       import('./components/category/category.component').then(
         (m) => m.CategoryComponent
       ),
-      canActivate:[potectCategoryPageGuard]
+      canActivate:[protectCategoryPageGuard]
   },
 ];
