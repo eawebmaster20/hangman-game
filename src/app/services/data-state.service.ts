@@ -7,11 +7,11 @@ import { Router } from '@angular/router';
 })
 export class DataStateService {
   categories!:CategoryObj
-  selectedCategory!:{name:string, data:ICategoryItem[]}
+  selectedCategory:{name:string, data:ICategoryItem[]}={name:'',data:[]} || {}
   constructor(private router:Router) { }
   routeToGame(categoryKey:any){
     this.selectedCategory = {name:categoryKey, data:this.categories[categoryKey]}
     console.log(this.selectedCategory);
-    this.router.navigate([categoryKey.toLowerCase().replace(' ', '-')])
+    this.router.navigate(['main-game'])
   }
 }
