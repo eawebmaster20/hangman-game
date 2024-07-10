@@ -1,4 +1,5 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component } from '@angular/core';
+import { DataStateService } from '../../services/data-state.service';
 
 @Component({
   selector: 'app-letters-layout',
@@ -8,6 +9,10 @@ import { Component, EventEmitter, Output } from '@angular/core';
   styleUrl: './letters-layout.component.scss',
 })
 export class LettersLayoutComponent {
+  constructor(private dataStateService: DataStateService) {
+    console.log(this.dataStateService.selectedCategory);
+  }
+
   keyLetters = [
     ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I'],
     ['J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R'],
@@ -15,6 +20,9 @@ export class LettersLayoutComponent {
   ];
 
   keyClicked(event: any) {
-    console.log(event.target.innerText);
+    let clickedLetter = event.target.innerText;
+    if (this.dataStateService.userGuessedChars.length < 4) {
+      this.dataStateService.getUserGuessedChars(clickedLetter);
+    }
   }
 }
