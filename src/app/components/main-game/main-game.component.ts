@@ -10,7 +10,7 @@ import { DataStateService } from '../../services/data-state.service';
   styleUrl: './main-game.component.scss',
 })
 export class MainGameComponent {
- dataStateService = inject(DataStateService);
+  constructor(public dataStateService: DataStateService){}
  displayHealthValue() {
   console.log(this.dataStateService.healthValue)
  }
@@ -28,5 +28,4 @@ export class MainGameComponent {
     this.dataStateService.getUserGuessedChars(key);
     }
  }
- 
 }
