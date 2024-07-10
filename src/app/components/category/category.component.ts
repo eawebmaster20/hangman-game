@@ -27,10 +27,4 @@ export class CategoryComponent implements OnInit {
       console.log(this.dataStateService.categories);
     });
   }
-
-  routeToGame(category: [string ,ICategoryItem[]]){
-    const name = category[0].replace(/ /g,"-").toLowerCase();
-    this.router.navigate([`/main-game/${name}`]); 
-    console.log(name)
-  }
 }
