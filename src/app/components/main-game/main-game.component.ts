@@ -12,25 +12,24 @@ import { ModalComponent } from '../../modal/modal.component';
   styleUrl: './main-game.component.scss',
 })
 export class MainGameComponent {
- dataStateService = inject(DataStateService);
- modalService = inject(ModalService);
+  dataStateService = inject(DataStateService);
+  modalService = inject(ModalService);
 
-  constructor(public dataStateService: DataStateService){}
- displayHealthValue() {
-  console.log(this.dataStateService.healthValue)
- }
-
- checkGuess(letter:string){
-  if(!this.dataStateService.chosenPhrase.includes(letter)){
-    this.dataStateService.healthValue -= 25
-    console.log(this.dataStateService.healthValue)
+  displayHealthValue() {
+    console.log(this.dataStateService.healthValue);
   }
-}
 
- getKeyClicked(key: string) {
-  if (this.dataStateService.userGuessedChars.length < 4) {
-    this.checkGuess(key);
-    this.dataStateService.getUserGuessedChars(key);
+  checkGuess(letter: string) {
+    if (!this.dataStateService.chosenPhrase.includes(letter)) {
+      this.dataStateService.healthValue -= 25;
+      console.log(this.dataStateService.healthValue);
     }
- }
+  }
+
+  getKeyClicked(key: string) {
+    if (this.dataStateService.userGuessedChars.length < 4) {
+      this.checkGuess(key);
+      this.dataStateService.getUserGuessedChars(key);
+    }
+  }
 }
