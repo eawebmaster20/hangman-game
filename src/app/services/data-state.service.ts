@@ -28,5 +28,5 @@ export class DataStateService {
     this.router.navigate(['main-game']);
   }
 
-  detectWinOrLoss() {
+  detectWinOrLoss() {}
 }
