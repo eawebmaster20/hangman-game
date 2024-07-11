@@ -3,7 +3,7 @@ import { LettersLayoutComponent } from '../letters-layout/letters-layout.compone
 import { WordDisplayComponent } from '../word-display/word-display.component';
 import { DataStateService } from '../../services/data-state.service';
 import { ModalService } from '../../services/modal.service';
-import { ModalComponent } from '../../modal/modal.component';
+import { ModalComponent } from '../modal/modal.component';
 
 @Component({
   selector: 'app-main-game',
