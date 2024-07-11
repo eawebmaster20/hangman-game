@@ -29,8 +29,4 @@ export class DataStateService {
   }
 
   detectWinOrLoss() {
-    if (this.healthValue === 0) {
-      // You lose modal shows here
-    }
-  }
 }
