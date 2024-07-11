@@ -1,9 +1,13 @@
 <div class="word-display">
   @for (word of totalWordsInPhrase; let i = $index; track i) {
   <div class="word">
-    @for (char of word; track char) {
+    @for (char of word; track char) { @if
+    (dataStateService.userGuessedChars.includes(char)) {
+    <div class="playable-letter">{{ char }}</div>
+    } @else {
+
     <div class="disabled-playable"></div>
-    }
+    } }
   </div>
   }
 </div>
