@@ -35,8 +35,8 @@ export class MainGameComponent {
       this.dataStateService.chosenPhraseArr.map((char) =>
         char === ' ' ? ' ' : '_'
       );
-    console.log(this.dataStateService.chosenPhrase);
-    console.log(this.dataStateService.hiddenPhrase);
+    // console.log(this.dataStateService.chosenPhrase);
+    // console.log(this.dataStateService.hiddenPhrase);
   }
 
   checkGuess(letter: string) {
@@ -49,6 +49,9 @@ export class MainGameComponent {
         this.dataStateService.healthValue -= 25;
       }
       this.dataStateService.userWrongGuesses.push(letter.toLowerCase());
+      if (this.dataStateService.healthValue === 0) {
+        this.modalService.showLoseModal();
+      }
     } else {
       // Code replacing the hidden characters with the correct ones
       for (let i = 0; i < this.dataStateService.chosenPhrase.length; i++) {
@@ -57,25 +60,21 @@ export class MainGameComponent {
           letter.toLowerCase()
         ) {
           this.dataStateService.hiddenPhrase[i] = letter.toLowerCase();
-          console.log(this.dataStateService.hiddenPhrase);
+          // console.log(this.dataStateService.hiddenPhrase);
         }
       }
-
-      // console.log(this.dataStateService.hiddenPhrase.join(''));
-      // console.log(this.dataStateService.chosenPhrase.toLowerCase());
 
       // Code for determing win
       if (
         this.dataStateService.hiddenPhrase.join('') ===
         this.dataStateService.chosenPhrase.toLowerCase()
       ) {
-        // console.log('You win!');
-        // Modal goes here
+        // Show win modal
         this.modalService.showWinModal();
       }
 
       this.dataStateService.userGuessedChars.push(letter.toLowerCase());
-      console.log(this.dataStateService.hiddenPhrase);
+      // console.log(this.dataStateService.hiddenPhrase);
       this.dataStateService.detectWinOrLoss();
     }
   }
