@@ -13,6 +13,7 @@ export class DataStateService {
   userGuessedChars: string[] = []; // user's correctly guessed characters
   userWrongGuesses: string[] = [];
   chosenPhrase: string = '';
+  chosenPhraseArray :string[] = this.chosenPhrase.toLowerCase().split('');
   healthValue = 100;
   healthStatus = `${this.healthValue}%`;
 
@@ -30,8 +31,20 @@ export class DataStateService {
   }
 
   detectWinOrLoss() {
-    if (this.userWrongGuesses.length === 4) {
-      // User lost
+    console.log('health value: ' + this.healthValue)
+    if (this.healthValue <= 0) {
+      console.log('you failed');
+      return;
     }
+   if(this.healthValue > 0 && this.userWrongGuesses.length < 4){
+    for(let i = 0; i < this.chosenPhraseArray.length; i++){
+      for(let j = 0; j < this.userGuessedChars.length; j++){
+        if (this.chosenPhraseArray[i] === this.userGuessedChars[j]) {
+          this.chosenPhraseArray[i] = this.userGuessedChars[j]
+        }
+      }
+    }
+             console.log("You win"); 
+   }
   }
 }

@@ -36,15 +36,20 @@ export class MainGameComponent {
     // If the chosen phrase doesn't not include the user's guess:
     // Decrease the health value by 25
     // Push the letter to the wrong guesses array
+    this.dataStateService.detectWinOrLoss(); 
     if (!this.dataStateService.chosenPhrase.includes(letter.toLowerCase())) {
       this.dataStateService.healthValue -= 25;
       this.dataStateService.userWrongGuesses.push(letter.toLowerCase());
     } else {
       this.dataStateService.userGuessedChars.push(letter.toLowerCase());
+      // this.dataStateService.detectWinOrLoss(); 
     }
+    
   }
 
   getKeyClicked(key: string) {
     this.checkGuess(key);
+    
   }
+  
 }
