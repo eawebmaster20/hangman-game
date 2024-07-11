@@ -41,10 +41,14 @@ export class MainGameComponent {
       this.dataStateService.userWrongGuesses.push(letter.toLowerCase());
     } else {
       this.dataStateService.userGuessedChars.push(letter.toLowerCase());
+      this.dataStateService.detectWinOrLoss(); 
     }
+    
   }
 
   getKeyClicked(key: string) {
     this.checkGuess(key);
+    
   }
+  
 }

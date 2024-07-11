@@ -10,6 +10,7 @@ import { ModalService } from '../services/modal.service';
 })
 export class ModalComponent implements OnInit {
   private audio!: HTMLAudioElement;
+  
 
   ngOnInit(): void {
     this.audio = new Audio();
