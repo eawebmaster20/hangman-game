@@ -47,10 +47,10 @@ export class MainGameComponent {
     if (!this.dataStateService.chosenPhrase.includes(letter.toLowerCase())) {
       if (this.dataStateService.healthValue > 0) {
         this.dataStateService.healthValue -= 25;
-        this.dataStateService.detectWinOrLoss();
       }
       this.dataStateService.userWrongGuesses.push(letter.toLowerCase());
     } else {
+      // Code replacing the hidden characters with the correct ones
       for (let i = 0; i < this.dataStateService.chosenPhrase.length; i++) {
         if (
           this.dataStateService.chosenPhrase[i].toLowerCase() ===
@@ -64,12 +64,14 @@ export class MainGameComponent {
       // console.log(this.dataStateService.hiddenPhrase.join(''));
       // console.log(this.dataStateService.chosenPhrase.toLowerCase());
 
+      // Code for determing win
       if (
         this.dataStateService.hiddenPhrase.join('') ===
         this.dataStateService.chosenPhrase.toLowerCase()
       ) {
         // console.log('You win!');
         // Modal goes here
+        this.modalService.showWinModal();
       }
 
       this.dataStateService.userGuessedChars.push(letter.toLowerCase());
