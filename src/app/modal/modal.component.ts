@@ -27,5 +27,9 @@ export class ModalComponent implements OnInit {
     this.audio.play();
   }
 
+  hideModal(): void {
+    this.modalService.modalStatus = false;
+  }
+
   modalService = inject(ModalService);
 }
