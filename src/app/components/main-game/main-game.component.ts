@@ -29,27 +29,57 @@ export class MainGameComponent {
       this.dataStateService.selectedCategory.data[
         randomIndex
       ].name.toLowerCase();
-    console.log(this.dataStateService.chosenPhrase);
+    this.dataStateService.chosenPhraseArr =
+      this.dataStateService.chosenPhrase.split('');
+    this.dataStateService.hiddenPhrase =
+      this.dataStateService.chosenPhraseArr.map((char) =>
+        char === ' ' ? ' ' : '_'
+      );
+    // console.log(this.dataStateService.chosenPhrase);
+    // console.log(this.dataStateService.hiddenPhrase);
   }
 
   checkGuess(letter: string) {
     // If the chosen phrase doesn't not include the user's guess:
     // Decrease the health value by 25
     // Push the letter to the wrong guesses array
-    this.dataStateService.detectWinOrLoss(); 
+    this.dataStateService.detectWinOrLoss();
     if (!this.dataStateService.chosenPhrase.includes(letter.toLowerCase())) {
-      this.dataStateService.healthValue -= 25;
+      if (this.dataStateService.healthValue > 0) {
+        this.dataStateService.healthValue -= 25;
+      }
       this.dataStateService.userWrongGuesses.push(letter.toLowerCase());
+      if (this.dataStateService.healthValue === 0) {
+        this.modalService.showLoseModal();
+      }
     } else {
+      // Code replacing the hidden characters with the correct ones
+      for (let i = 0; i < this.dataStateService.chosenPhrase.length; i++) {
+        if (
+          this.dataStateService.chosenPhrase[i].toLowerCase() ===
+          letter.toLowerCase()
+        ) {
+          this.dataStateService.hiddenPhrase[i] = letter.toLowerCase();
+          // console.log(this.dataStateService.hiddenPhrase);
+        }
+      }
+
+      // Code for determing win
+      if (
+        this.dataStateService.hiddenPhrase.join('') ===
+        this.dataStateService.chosenPhrase.toLowerCase()
+      ) {
+        // Show win modal
+        this.modalService.showWinModal();
+      }
+
       this.dataStateService.userGuessedChars.push(letter.toLowerCase());
-      // this.dataStateService.detectWinOrLoss(); 
+      // console.log(this.dataStateService.hiddenPhrase);
+      this.dataStateService.detectWinOrLoss();
     }
-    
   }
 
   getKeyClicked(key: string) {
     this.checkGuess(key);
-    
   }
-  
 }
