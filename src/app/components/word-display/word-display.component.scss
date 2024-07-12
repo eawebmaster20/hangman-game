@@ -50,4 +50,15 @@
   .word-display {
     gap: 50px;
   }
+  .playable-letter{
+    width: 70px;
+    height: 79px;
+    border-radius: 25px;
+    font-size: 64px;
+  }
+  .disabled-playable{
+    width: 70px;
+    height: 79px;
+    border-radius: 25px;
+  }
 }
