@@ -4,7 +4,6 @@ import { WordDisplayComponent } from '../word-display/word-display.component';
 import { DataStateService } from '../../services/data-state.service';
 import { ModalService } from '../../services/modal.service';
 import { ModalComponent } from '../modal/modal.component';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-main-game',
@@ -18,27 +17,9 @@ export class MainGameComponent {
   modalService = inject(ModalService);
 
   constructor() {
-    // Generate random name
-    this.generateRandomName();
   }
 
-  generateRandomName() {
-    let randomIndex = Math.floor(
-      Math.random() * this.dataStateService.selectedCategory.data.length
-    );
-    this.dataStateService.chosenPhrase =
-      this.dataStateService.selectedCategory.data[
-        randomIndex
-      ].name.toLowerCase();
-    this.dataStateService.chosenPhraseArr =
-      this.dataStateService.chosenPhrase.split('');
-    this.dataStateService.hiddenPhrase =
-      this.dataStateService.chosenPhraseArr.map((char) =>
-        char === ' ' ? ' ' : '_'
-      );
-    // console.log(this.dataStateService.chosenPhrase);
-    // console.log(this.dataStateService.hiddenPhrase);
-  }
+
 
   checkGuess(letter: string) {
     // If the chosen phrase doesn't not include the user's guess:
@@ -82,21 +63,5 @@ export class MainGameComponent {
 
   getKeyClicked(key: string) {
     this.checkGuess(key);
-  }
-}
-@Component({
-  selector: 'app-main-game',
-  standalone: true,
-  imports: [],
-  template: '',
-  styles: '',
-})
-export class SwitchComponent implements OnInit{
-  constructor(private router:Router, private dataStateService:DataStateService){}
-  ngOnInit(): void {
-    console.log('temp logged');
-    this.dataStateService.routeToGame(this.dataStateService.selectedCategory.name)
-    this.router.navigate(['main-game'])
-    this.dataStateService.healthValue = 100
   }
 }
