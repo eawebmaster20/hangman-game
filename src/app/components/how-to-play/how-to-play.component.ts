@@ -9,4 +9,22 @@ import { RouterLink } from '@angular/router';
   templateUrl: './how-to-play.component.html',
   styleUrl: './how-to-play.component.scss',
 })
-export class HowToPlayComponent {}
+export class HowToPlayComponent {
+  private audioHover!: HTMLAudioElement;
+  private audioClick!: HTMLAudioElement;
+
+  ngOnInit(): void {
+    this.audioHover = new Audio('../assets/sounds/hover sound.wav');
+    this.audioClick = new Audio('../assets/sounds/click.mp3');
+  }
+
+  playHoverSound(): void {
+    this.audioHover.currentTime = 0; // Adjust the path to your sound file
+    this.audioHover.play();
+  }
+
+  playClickOptionSound(): void {
+    this.audioClick.currentTime = 0;
+    this.audioClick.play();
+  }
+}

@@ -18,10 +18,26 @@ import { RouterLink } from '@angular/router';
 })
 
 export class CategoryComponent implements OnInit {
+  private audioHover!: HTMLAudioElement;
+  private audioClick!: HTMLAudioElement;
+
   categoryList:string[]=[]
   constructor(public dataStateService: DataStateService, public crudService: CrudService ,private router: Router){}
   ngOnInit(): void {
+    this.audioHover = new Audio('../assets/sounds/hover sound.wav');
+    this.audioClick = new Audio('../assets/sounds/click.mp3');
+
     this.categoryList = Object.keys(this.dataStateService.categories);
-    
+
+  }
+
+  playHoverSound(): void {
+    this.audioHover.currentTime = 0; // Adjust the path to your sound file
+    this.audioHover.play();
+  }
+
+  playClickOptionSound(): void {
+    this.audioClick.currentTime = 0;
+    this.audioClick.play();
   }
 }
