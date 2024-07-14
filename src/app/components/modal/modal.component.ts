@@ -11,11 +11,13 @@ import { Router } from '@angular/router';
   styleUrl: './modal.component.scss',
 })
 export class ModalComponent implements OnInit {
-  private audio!: HTMLAudioElement;
+  private audioHover!: HTMLAudioElement;
+  private audioClick!: HTMLAudioElement;
   constructor(private router: Router){}
 
   ngOnInit(): void {
-    this.audio = new Audio();
+    this.audioHover = new Audio('../assets/sounds/hover sound.wav');
+    this.audioClick = new Audio('../assets/sounds/click.mp3');
   }
   playNewGame(gotoNewCategory?:boolean){
     console.log('called playgame');
@@ -38,15 +40,13 @@ export class ModalComponent implements OnInit {
     ? this.playNewGame(gotoNewCategory): this.resumeGame();
   }
   playHoverSound(): void {
-    this.audio.src = '../assets/sounds/hover sound.wav'; // Adjust the path to your sound file
-    this.audio.load();
-    this.audio.play();
+    this.audioHover.currentTime = 0; // Adjust the path to your sound file
+    this.audioHover.play();
   }
 
   playClickOptionSound(): void {
-    this.audio.src = '../assets/sounds/click.mp3';
-    this.audio.load();
-    this.audio.play();
+    this.audioClick.currentTime = 0;
+    this.audioClick.play();
   }
 
   switchComponent(){
