@@ -28,8 +28,8 @@ export class LettersLayoutComponent {
   }
 
   ngOnInit(): void {
-    this.audioHover = new Audio('../assets/sounds/hover sound.wav');
-    this.audioClick = new Audio('../assets/sounds/click.mp3');
+    this.audioHover = new Audio('assets/sounds/hover sound.wav');
+    this.audioClick = new Audio('assets/sounds/click.mp3');
   }
 
   playClickOptionSound(): void {
