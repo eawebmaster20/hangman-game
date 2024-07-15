@@ -63,7 +63,7 @@
 }
 
 .box-title::before {
-    content: "Paused";
+    content: var(--before-content, "Paused");
     position: absolute;
     top: 0;
     left: 50%;
@@ -71,6 +71,7 @@
     z-index: -1;
     -webkit-text-stroke: 15px #243041;
     -webkit-text-fill-color: transparent;
+    width: 100%;
 }
 
 
