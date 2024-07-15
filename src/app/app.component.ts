@@ -11,5 +11,14 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './app.component.scss',
 })
 export class AppComponent {
+  private backgroundMusic!: HTMLAudioElement;
   title = 'hangman-game';
+
+  ngOnInit(): void {
+    this.backgroundMusic = new Audio('/assets/sounds/background song.mp3');
+  }
+
+  playBackgroundMusic(): void {
+    this.backgroundMusic.play();
+  }
 }
