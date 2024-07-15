@@ -16,8 +16,8 @@ export class ModalComponent implements OnInit {
   constructor(private router: Router){}
 
   ngOnInit(): void {
-    this.audioHover = new Audio('../assets/sounds/hover sound.wav');
-    this.audioClick = new Audio('../assets/sounds/click.mp3');
+    this.audioHover = new Audio('/assets/sounds/hover sound.wav');
+    this.audioClick = new Audio('/assets/sounds/click.mp3');
   }
   playNewGame(){
     console.log('called playgame');

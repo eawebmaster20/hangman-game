@@ -24,8 +24,8 @@ export class CategoryComponent implements OnInit {
   categoryList:string[]=[]
   constructor(public dataStateService: DataStateService, public crudService: CrudService ,private router: Router){}
   ngOnInit(): void {
-    this.audioHover = new Audio('../assets/sounds/hover sound.wav');
-    this.audioClick = new Audio('../assets/sounds/click.mp3');
+    this.audioHover = new Audio('/assets/sounds/hover sound.wav');
+    this.audioClick = new Audio('/assets/sounds/click.mp3');
 
     this.categoryList = Object.keys(this.dataStateService.categories);
 

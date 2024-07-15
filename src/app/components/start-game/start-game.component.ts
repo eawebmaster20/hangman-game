@@ -19,8 +19,8 @@ export class StartGameComponent implements OnInit {
     public crudService: CrudService
   ) {}
   ngOnInit(): void {
-    this.audioHover = new Audio('../assets/sounds/hover sound.wav');
-    this.audioClick = new Audio('../assets/sounds/click.mp3');
+    this.audioHover = new Audio('/assets/sounds/hover sound.wav');
+    this.audioClick = new Audio('/assets/sounds/click.mp3');
     
     this.crudService.getGameData().subscribe((res: any) => {
       this.dataStateService.categories = res.categories;
