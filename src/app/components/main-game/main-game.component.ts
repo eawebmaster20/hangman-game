@@ -20,6 +20,23 @@ export class MainGameComponent {
   }
 
 
+  generateRandomName() {
+    let randomIndex = Math.floor(
+      Math.random() * this.dataStateService.selectedCategory.data.length
+    );
+    this.dataStateService.chosenPhrase =
+      this.dataStateService.selectedCategory.data[
+        randomIndex
+      ].name.toLowerCase();
+    this.dataStateService.chosenPhraseArr =
+      this.dataStateService.chosenPhrase.split('');
+    this.dataStateService.hiddenPhrase =
+      this.dataStateService.chosenPhraseArr.map((char) =>
+        char === ' ' ? ' ' : '_'
+      );
+  }
+
+
 
   checkGuess(letter: string) {
     // If the chosen phrase doesn't not include the user's guess:
