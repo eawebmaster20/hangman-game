@@ -12,7 +12,7 @@ export class LettersLayoutComponent {
   private audioHover!: HTMLAudioElement;
   private audioClick!: HTMLAudioElement;
 
-  constructor(private dataStateService: DataStateService) {}
+  constructor(public dataStateService: DataStateService) {}
 
   @Output() getClickedKeyEvent = new EventEmitter<string>();
 
