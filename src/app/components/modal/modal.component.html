@@ -6,12 +6,14 @@
         <div class="middle-box">
             <p class="box-title">{{modalService.modalTitle}}</p>
             <div class="options">
+                <!-- <p (mouseover)="playHoverSound()" class="selectable-category"
+                    (click)="modalService.modalTitle ==='You Win'? continueGame(false):''">CONTINUE</p> -->
                 <p (mouseover)="playHoverSound()" class="selectable-category"
-                    (click)="playClickOptionSound()">CONTINUE</p>
+                    (click)="continueGame(false)">CONTINUE</p>
                 <p (mouseover)="playHoverSound()" 
-                    (click)="playClickOptionSound()"class="selectable-category">NEW CATEGORY</p>
+                    (click)="continueGame(true)"class="selectable-category">NEW CATEGORY</p>
                 <p (mouseover)="playHoverSound()"
-                    (click)="playClickOptionSound()" class="selectable-category last-selectable-category">QUIT GAME</p>
+                    (click)="quiteGame()" class="selectable-category last-selectable-category">QUIT GAME</p>
             </div>
         </div>
     </div>

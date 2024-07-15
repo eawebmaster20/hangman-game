@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { LettersLayoutComponent } from '../letters-layout/letters-layout.component';
 import { WordDisplayComponent } from '../word-display/word-display.component';
 import { DataStateService } from '../../services/data-state.service';
@@ -17,9 +17,8 @@ export class MainGameComponent {
   modalService = inject(ModalService);
 
   constructor() {
-    // Generate random name
-    this.generateRandomName();
   }
+
 
   generateRandomName() {
     let randomIndex = Math.floor(
@@ -36,6 +35,8 @@ export class MainGameComponent {
         char === ' ' ? ' ' : '_'
       );
   }
+
+
 
   checkGuess(letter: string) {
     // If the chosen phrase doesn't not include the user's guess:

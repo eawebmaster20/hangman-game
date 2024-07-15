@@ -4,7 +4,6 @@ import { ProtectGameGuard } from './guards/protect-game.guard';
 import { protectCategoryPageGuard } from './guards/potect-category-page.guard';
 
 export const routes: Routes = [
-  { path: '', component: StartGameComponent },
   {
     path: 'main-game',
     loadComponent: () =>
@@ -28,4 +27,5 @@ export const routes: Routes = [
       ),
       canActivate:[protectCategoryPageGuard]
   },
+  { path: '**', component: StartGameComponent },
 ];
