@@ -35,8 +35,6 @@ export class MainGameComponent {
       this.dataStateService.chosenPhraseArr.map((char) =>
         char === ' ' ? ' ' : '_'
       );
-    // console.log(this.dataStateService.chosenPhrase);
-    // console.log(this.dataStateService.hiddenPhrase);
   }
 
   checkGuess(letter: string) {
