@@ -30,6 +30,12 @@
   color: white;
 }
 
+.letters-layout div button:disabled:hover {
+  background-color: rgba(255, 255, 255, 0.253);
+  color: rgba(0, 0, 0, 0.685) ;
+  cursor:not-allowed;
+}
+
 @media only screen and (min-width: 500px) {
   .letters-layout div button {
     font-size: 30px;
