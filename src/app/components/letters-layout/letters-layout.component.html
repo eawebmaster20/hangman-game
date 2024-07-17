@@ -1,0 +1,12 @@
+<div class="letters-layout">
+  @for(letter of keyLetters;track letter){
+  <div>
+    @for(char of letter;track char){
+    <button (click)="keyClicked($event)" id="letter-container" (click)="playClickOptionSound()" [disabled]="dataStateService.hiddenPhrase.includes(char.toLocaleLowerCase())">
+      {{ char }}
+    </button>
+    }
+  </div>
+  }
+</div>
+

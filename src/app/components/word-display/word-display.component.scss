@@ -1,0 +1,64 @@
+.word-display {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.word {
+  display: flex;
+  gap: 16px;
+}
+
+.playable-letter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 40px;
+  text-transform: uppercase;
+  padding: 9px 13px;
+  background-color: var(--blue);
+  color: var(--white);
+  border-radius: 12px;
+  border: none;
+  appearance: none;
+  box-shadow: inset 0 -2px 0 3px rgba(20, 14, 102, 1),
+    inset 0 1px 0 6px rgba(60, 116, 255, 1);
+  cursor: pointer;
+  transition: 0.2s ease-in;
+}
+
+.disabled-playable {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 40px;
+  width: 40px;
+  height: 66px;
+  opacity: 0.5;
+  background-color: var(--dark-navy);
+  color: var(--white);
+  border-radius: 12px;
+  border: none;
+  appearance: none;
+  box-shadow: inset 0 -2px 0 3px rgba(20, 14, 102, 1),
+    inset 0 1px 0 6px rgba(60, 116, 255, 0.2);
+  cursor: pointer;
+}
+
+@media only screen and (min-width: 650px) {
+  .word-display {
+    gap: 50px;
+  }
+  .playable-letter{
+    width: 50px;
+    height: 59px;
+    border-radius: 20px;
+    font-size: 40px;
+  }
+  .disabled-playable{
+    width: 50px;
+    height: 59px;
+    border-radius: 20px;
+  }
+}

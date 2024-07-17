@@ -11,9 +11,18 @@
   --blue-hover: #5b8aff;
 }
 
+html {
+  height: 100%;
+}
+
 body,
 button {
   font-family: "Mouse Memoirs", sans-serif;
+}
+
+a {
+  text-decoration: none;
+  text-transform: uppercase;
 }
 
 body {
@@ -23,6 +32,7 @@ body {
   background-size: cover;
   height: 100vh;
   color: var(--white);
+  // border: solid 1px pink;
 }
 
 /* Button One Styles */
@@ -63,43 +73,6 @@ body {
   background: linear-gradient(to bottom, #fe71fe, #b6caff);
 }
 
-.playable-letter {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 112px;
-  height: 128px;
-  font-size: 88px;
-  padding: 12px 42px;
-  background-color: var(--blue);
-  color: var(--white);
-  border-radius: 40px;
-  border: none;
-  appearance: none;
-  box-shadow: inset 0 -2px 0 3px rgba(20, 14, 102, 1),
-    inset 0 1px 0 6px rgba(60, 116, 255, 1);
-  cursor: pointer;
-  transition: 0.2s ease-in;
-}
-
-.disabled-playable {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 112px;
-  height: 128px;
-  font-size: 88px;
-  padding: 12px 42px;
-  background-color: var(--dark-navy);
-  color: var(--white);
-  border-radius: 40px;
-  border: none;
-  appearance: none;
-  box-shadow: inset 0 -2px 0 3px rgba(20, 14, 102, 1),
-    inset 0 1px 0 6px rgba(60, 116, 255, 0.2);
-  cursor: pointer;
-}
-
 .regular-letter {
   display: flex;
   justify-content: center;
@@ -131,26 +104,10 @@ body {
   background-color: #46415c;
 }
 
-.selectable-category {
-  font-size: 48px;
-  color: var(--white);
-  width: 503px;
-  height: 190px;
-  border-radius: 40px;
-  border: none;
-  appearance: none;
-  background-color: var(--blue);
-  box-shadow: inset 0 -2px 0 3px rgba(20, 14, 102, 1),
-    inset 0 1px 0 6px rgba(60, 116, 255, 1);
-  cursor: pointer;
-  transition: 0.2s ease-in;
-}
-
-.selectable-category:hover {
-  background-color: var(--blue-hover);
-}
-
 .play-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 200px;
   height: 200px;
   border-radius: 999px;
@@ -166,10 +123,23 @@ body {
   background: linear-gradient(to bottom, #fe71fe, #b6caff);
 }
 
+.container {
+  padding: 40px 25px;
+  // border: solid 1px pink;
+  width: 100%;
+  height: 100%;
+}
+
+.main-content {
+  margin: 80px 0;
+  // border: solid 1px pink;
+  width: 100%;
+}
+
 /*--------------------------------------------------------------------
   Media Queries
   --------------------------------------------------------------------*/
-@media only screen and (min-width: 375px) {
+@media only screen and (max-width: 376px) {
   body {
     background-image: url("./assets/images/background-tablet.svg");
   }
@@ -178,6 +148,15 @@ body {
 @media only screen and (min-width: 768px) {
   body {
     background-image: url("./assets/images/background-desktop.svg");
+  }
+}
+
+@media only screen and (max-height: 667px) {
+  body {
+    // border: solid 2px pink;
+    height: fit-content;
+    background-size: auto;
+    padding: 0 0 40px 0;
   }
 }
 /* You can add global styles to this file, and also import other style files */

@@ -1,30 +1,33 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, RouterLink } from '@angular/router';
+import { BackButtonComponent } from '../back-button/back-button.component';
 import { CrudService } from '../../services/crud.service';
+import { Router } from '@angular/router';
 import { DataStateService } from '../../services/data-state.service';
+import { RouterLink } from '@angular/router';
+
+
+
 
 @Component({
-  selector: 'app-start-game',
+  selector: 'app-category',
   standalone: true,
-  imports: [RouterLink],
-  templateUrl: './start-game.component.html',
-  styleUrl: './start-game.component.scss',
+  imports: [BackButtonComponent, RouterLink],
+  templateUrl: './category.component.html',
+  styleUrl: './category.component.scss'
 })
-export class StartGameComponent implements OnInit {
+
+export class CategoryComponent implements OnInit {
   private audioHover!: HTMLAudioElement;
   private audioClick!: HTMLAudioElement;
 
-  constructor(
-    public dataStateService: DataStateService,
-    public crudService: CrudService
-  ) {}
+  categoryList:string[]=[]
+  constructor(public dataStateService: DataStateService, public crudService: CrudService ,private router: Router){}
   ngOnInit(): void {
     this.audioHover = new Audio('assets/sounds/hover sound.wav');
     this.audioClick = new Audio('assets/sounds/click.mp3');
-    
-    this.crudService.getGameData().subscribe((res: any) => {
-      this.dataStateService.categories = res.categories;
-    });
+
+    this.categoryList = Object.keys(this.dataStateService.categories);
+
   }
 
   playHoverSound(): void {
@@ -36,5 +39,4 @@ export class StartGameComponent implements OnInit {
     this.audioClick.currentTime = 0;
     this.audioClick.play();
   }
-
 }

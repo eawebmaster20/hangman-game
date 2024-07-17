@@ -1,27 +1,39 @@
-# HangmanGame
+# HANGMAN GAME
+Objective: The goal is to guess the correct word or phrase by suggesting letters within four guesses.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.6.
+### Gameplay:
 
-## Development server
+* Players are presented with a series of blank spaces representing the letters of the word or phrase to be guessed.
+* Players guess letters one at a time.
+* Correct guesses fill in the corresponding blank spaces.
+* Incorrect guesses result in deduction of health.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+### Winning and Losing:
+* The game is won by correctly guessing all the letters in the word or phrase before the healthbar goes empty.
+* The game is lost if the healthbar is empty.
 
-## Code scaffolding
+### Feedback:
+* Players receive feedback after each guess, indicating whether the guessed letter is correct or incorrect.
+* Incorrect guesses typically result in the reduction of health.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
+# ROLES
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Silas Owu
+Silas implemented the category and route for the categories.
+He also made it possible for all questions to be generated randomly for each category.
 
-## Running unit tests
+## Emmanuel Adomako
+Emmanuel implemented the route for the entire application and also the local storage and the selected category service.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Samuel Larbi Danquah
+Samuel implemented the display of the selected characters,the win and lose modal displays and the logic for the game.
 
-## Running end-to-end tests
+## Harriet Buadee
+Harriet implemented thelogic  for the health bar and the service.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## Nana Kojo Akyin Abruquah
+Nana Kojo implemented the pause,continue and  select new category when a game is in play.
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Pince Emmanuel Baah Binney
+Prince implemented the disabling of the selected characters.
